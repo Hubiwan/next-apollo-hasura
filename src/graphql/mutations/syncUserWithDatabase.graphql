@@ -1,0 +1,26 @@
+mutation syncUserwithDatabase(
+	$id: String
+	$authProvider: String
+	$name: String
+	$email: String
+) {
+	insert_user_one(
+		object: {
+			id: $id
+			auth_provider: $authProvider
+			name: $name
+			email: $email
+		}
+		on_conflict: {
+			constraint: user_pkey
+			update_columns: [name, email]
+		}
+	) {
+		id
+		auth_provider
+		name
+		email
+		updated_at
+		created_at
+	}
+}

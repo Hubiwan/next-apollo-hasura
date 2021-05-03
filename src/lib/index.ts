@@ -1,0 +1,1 @@
+export { syncUserWithDatabase } from './syncUserWithDatabase'

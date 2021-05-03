@@ -1,0 +1,55 @@
+{
+    "name": "next-apollo-hasura",
+    "version": "0.1.0",
+    "private": true,
+    "author": {
+        "name": "hubert kuoch",
+        "email": "hubert.kuoch@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hubiwan/next-apollo-hasura.git"
+    },
+    "license": "MIT",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "codegen": "graphql-codegen -r dotenv/config --config codegen.yml dotenv_config_path=.env.local"
+    },
+    "dependencies": {
+        "@apollo/client": "^3.3.15",
+        "deepmerge": "^4.2.2",
+        "graphql": "^15.5.0",
+        "isomorphic-unfetch": "^3.1.0",
+        "isomorphic-ws": "^4.0.1",
+        "jsonwebtoken": "^8.5.1",
+        "lodash.isequal": "^4.5.0",
+        "next": "10.2.0",
+        "next-auth": "^3.19.3",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "subscriptions-transport-ws": "^0.9.18",
+        "ws": "^7.4.5"
+    },
+    "devDependencies": {
+        "@graphql-codegen/cli": "1.21.4",
+        "@graphql-codegen/import-types-preset": "^1.18.1",
+        "@graphql-codegen/typescript": "1.22.0",
+        "@graphql-codegen/typescript-operations": "1.17.16",
+        "@graphql-codegen/typescript-react-apollo": "2.2.4",
+        "@types/lodash.isequal": "^4.5.5",
+        "@types/react": "^17.0.4",
+        "@typescript-eslint/eslint-plugin": "^4.22.0",
+        "@typescript-eslint/parser": "^4.22.0",
+        "eslint": "^7.25.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-react": "^7.23.2",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "eslint-plugin-simple-import-sort": "^7.0.0",
+        "prettier": "^2.2.1",
+        "typescript": "^4.2.4"
+    }
+}

@@ -1,0 +1,44 @@
+schema:
+  - ${HASURA_GRAPHQL_ENDPOINT}/v1/graphql:
+      headers:
+        x-hasura-admin-secret: ${HASURA_GRAPHQL_ADMIN_SECRET}
+  - src/graphql/**/local-schema.graphql
+
+overwrite: true
+
+hooks:
+  afterAllFileWrite:
+    - eslint --fix
+
+documents: src/graphql/**/!(local-schema).graphql
+
+# config:
+#   scalars:
+#     DateTime: Date
+#     JSON: "{[key:string]: any}"
+#     timestamptz: string
+#     numeric: number
+#     maybeValue: T | undefined
+
+generates:
+  src/__generated__/schemas.ts:
+    plugins:
+      - typescript
+
+  src/__generated__/operations.ts:
+    preset: import-types
+    presetConfig:
+      typesPath: ./schemas
+    plugins:
+      - typescript-operations
+
+  src/__generated__/hooks.tsx:
+    preset: import-types
+    presetConfig:
+      typesPath: ./operations
+    plugins:
+      - typescript-react-apollo
+    config:
+      withHOC: false
+      withComponent: false
+      withHooks: true
