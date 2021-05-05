@@ -1,5 +1,5 @@
 import { SyncUserwithDatabaseDocument } from '__generated__'
-import { initializeApolloClient } from 'config/initializeApolloClient'
+import { initializeApolloClient } from 'lib/apollo'
 
 import type { SyncUserwithDatabaseMutationVariables } from '__generated__'
 
