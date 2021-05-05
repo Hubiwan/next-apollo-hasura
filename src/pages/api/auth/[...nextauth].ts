@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken'
 import NextAuth from 'next-auth'
 import Providers from 'next-auth/providers'
 
-import { syncUserWithDatabase } from 'lib'
+import { syncUserWithDatabase } from 'lib/utils'
 
 import type { NextAuthOptions } from 'next-auth'
 import type { JWT } from 'next-auth/jwt'
