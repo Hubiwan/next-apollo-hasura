@@ -41,7 +41,7 @@ function errorLink() {
 		if (networkError) {
 			if (networkError.name === 'ServerError') {
 				if ((networkError as ServerError).statusCode === 401) {
-					// eslint-disable-next-line
+					// eslint-disable-next-line no-console
 					console.log(`[Network error]: ${networkError}`)
 					// Reset cached auth token on authentication error
 					authToken = undefined
@@ -51,7 +51,7 @@ function errorLink() {
 
 		if (graphQLErrors) {
 			graphQLErrors.forEach(({ message, locations, path }) => {
-				// eslint-disable-next-line
+				// eslint-disable-next-line no-console
 				console.log(
 					`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
 				)
@@ -88,7 +88,7 @@ function createWSLink() {
 				},
 				connectionCallback: errors => {
 					errors.forEach(error => {
-						// eslint-disable-next-line
+						// eslint-disable-next-line no-console
 						console.log(error)
 					})
 				}
