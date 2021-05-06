@@ -47,7 +47,7 @@ module.exports = {
 					['^react', '^@?\\w'],
 					// Internal packages.
 					[
-						'^(components|config|containers|hooks|lib|models|styles|__generated__)(?!.*\\u0000$)(/.*|$)'
+						'^(components|hooks|layouts|lib|models|styles|__generated__)(?!.*\\u0000$)(/.*|$)'
 					],
 					// Side effect imports.
 					['^\\u0000'],
